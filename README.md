@@ -11,7 +11,7 @@ http://in.bakaa.me
 
 ``` bash
 # Download
-$ git clone https://github.com/python/safedjanda # Or download from releases
+$ git clone https://github.com/py7hon/safedjanda # Or download from releases
 
 # Deploy to localhost or Cpanel 
 

@@ -346,15 +346,16 @@ label {
 <br>
 <textarea type="text" rows="4" cols="50" readonly>
 <?php
-	require ("gen.php");
+	require ("gen.php");	$protocol=strpos(strtolower($_SERVER['SERVER_PROTOCOL']),'https') === FALSE ? 'http' : 'https'; 
+
+$host = $protocol.'://'.$_SERVER['HTTP_HOST'].'?';
 if(isset($_POST["link"])){
-	$a = explode("\n", $_POST["link"]);
-		echo 'http://in.bakaa.me?secure'.split_link(encrypte($_POST['link'],'hashv1.00')); //change with your website
+	$a = explode("\n", $_POST["link"]);  echo $host.split_link(encrypte($_POST['link'],'hashv1.00')); //change with your website
     
 }
 ?>
 </textarea>
 <br>
-<span><small><a href="<?php	echo 'http://in.bakaa.me?secure'.split_link(encrypte($_POST['link'],'hashv1.00'));?> "><button type="button" class="btn btn-primary btn-xs">Test Link</button></a></small></span><!-- change with your website -->
+<span><small><a href="<?php echo $host.split_link(encrypte($_POST['link'],'hashv1.00'));?> "><button type="button" class="btn btn-primary btn-xs">Test Link</button></a></small></span><!-- change with your website -->
 </center>
 </body></html>
